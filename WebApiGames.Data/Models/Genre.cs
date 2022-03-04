@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 
-namespace WebApiGames.Domain.Models
+namespace WebApiGames.Data.Models
 {
     public class Genre
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public List<GamesGenreRelation> GamesRelaion { get; set; }
     }
 }

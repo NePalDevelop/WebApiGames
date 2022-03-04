@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebApiGames.Domain.Models
+namespace WebApiGames.Data.Models
 {
     public class DeveloperStudio
     {

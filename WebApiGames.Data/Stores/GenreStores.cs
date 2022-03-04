@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebApiGames.Data.Stores
 {
-    class GenreStore
+    class GenreStores
     {
     }
 }

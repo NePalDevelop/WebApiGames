@@ -14,8 +14,6 @@ namespace WebApiGames.Domain.Interfaces
 
         public Task<Game> UpdateGame(Game game);
 
-        public Task<Game> DeleteGame(Game game);
-
-        public Task<bool> GameExist(Game game);
+        public Task DeleteGame(Game game);
     }
 }

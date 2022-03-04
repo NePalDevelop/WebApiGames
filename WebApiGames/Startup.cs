@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApiGames.Data;
-//using WebApiGames.Data.Stores;
+using WebApiGames.Data.Stores;
+using WebApiGames.Domain.Interfaces;
 
 namespace WebApiGames
 {
@@ -20,12 +21,12 @@ namespace WebApiGames
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<GamesContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-//            services.AddScoped<DoctorStore>();
+            services.AddScoped<IGameStores, GameStores>();
             //services.AddScoped<PatientStore>();
             services.AddControllers();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app) //, IWebHostEnvironment env)
         {
             app.UseRouting();
 

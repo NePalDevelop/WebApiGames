@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WebApiGames.Domain.Models
+namespace WebApiGames.Data.Models
 {
     public class Game
     {
@@ -10,8 +10,8 @@ namespace WebApiGames.Domain.Models
 
         public int StudioId { get; set; }
 
-        public string DeveloperStudioName { get; set; }
+        public DeveloperStudio DeveloperStudio { get; set; }
 
-        public List<Genre> Genres { get; set; }
+        public List<GamesGenreRelation> GenresRelation { get; set; }
     }
 }
