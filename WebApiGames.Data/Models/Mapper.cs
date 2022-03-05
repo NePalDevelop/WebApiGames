@@ -1,39 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebApiGames.Domain.Models;
-
+﻿using System.Linq;
 
 namespace WebApiGames.Data.Models
 {
     public static class Mapper
     {
-        public static Game MapGameFromDomain(Domain.Models.Game game)
-        {
-            if (game == null) return null;
-
-            Game dataGame = new Game
-            {
-                Id = game.Id,
-                Name = game.Name,
-                StudioId = game.StudioId,
-                DeveloperStudio = new DeveloperStudio
-                {
-                    Id = game.StudioId,
-                    StudioName = game.DeveloperStudioName
-                },
-                GenresRelation = game.Genres.Select(g => new GamesGenreRelation
-                {
-                    GameId = game.Id,
-                    GenreId = g.Id
-                }).ToList()
-            };
-
-            return dataGame;
-        }
-
         public static Domain.Models.Game MapGameToDomain(Game game)
         {
             if (game == null) return null;
@@ -42,11 +12,11 @@ namespace WebApiGames.Data.Models
             {
                 Id = game.Id,
                 Name = game.Name,
-                StudioId = game.StudioId,
+                StudioId = game.DeveloperStudioId,
                 DeveloperStudioName = game.DeveloperStudio.StudioName,
                 Genres = game.GenresRelation.Select(g => new Domain.Models.Genre
                 {
-                    Id = g.Id,
+                    Id = g.GenreId,
                     Name = g.Genre.Name
                 }).ToList()
             };
@@ -55,8 +25,3 @@ namespace WebApiGames.Data.Models
         }
     }
 }
-
-
-
-
-public ICollection<GamesGenreRelation> GenresRelation { get; set; }

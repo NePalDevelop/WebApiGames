@@ -8,7 +8,7 @@ namespace WebApiGames.Data.Models
 
         public string Name { get; set; }
 
-        public int StudioId { get; set; }
+        public int DeveloperStudioId { get; set; }
 
         public DeveloperStudio DeveloperStudio { get; set; }
 

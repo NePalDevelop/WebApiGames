@@ -4,9 +4,9 @@ using WebApiGames.Domain.Models;
 
 namespace WebApiGames.Domain.Interfaces
 {
-    public interface IGameStores
+    public interface IGameStore
     {
-        public Task<IEnumerable<Game>> GetGames();
+        public Task<IEnumerable<Game>> GetGames(GameQuery gameQuery);
 
         public Task<Game> GetGame(int id);
 
@@ -14,6 +14,6 @@ namespace WebApiGames.Domain.Interfaces
 
         public Task<Game> UpdateGame(Game game);
 
-        public Task DeleteGame(Game game);
+        public Task<bool> DeleteGame(int id);
     }
 }

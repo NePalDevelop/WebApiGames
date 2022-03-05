@@ -1,4 +1,4 @@
-﻿using WebApiGames.Domain.Models;
+﻿using WebApiGames.Data.Models;
 using System.Linq;
 
 namespace WebApiGames.Data
@@ -7,31 +7,12 @@ namespace WebApiGames.Data
     {
         public static void Initialize(GamesContext context)
         {
-
-            context.Database.EnsureDeleted();
-
             context.Database.EnsureCreated();
 
             if (context.Games.Any())
             {
-                return;   // DB has been seeded
+                return;  
             }
-
-            var games = new Game[]
-            {
-                new Game {Name = "Tetris", StudioId = 1},
-                new Game {Name = "World of Tanks", StudioId = 1},
-                new Game {Name = "Dota2", StudioId = 2},
-                new Game {Name = "Civilization", StudioId = 3},
-                new Game {Name = "Doom", StudioId = 3}
-            };
-
-            foreach (var g in games)
-            {
-                context.Games.Add(g);
-            }
-
-            context.SaveChanges();
 
             var studios = new DeveloperStudio[]
             {
@@ -57,6 +38,22 @@ namespace WebApiGames.Data
             foreach (var g in genres)
             {
                 context.Genres.Add(g);
+            }
+
+            context.SaveChanges();
+
+            var games = new Game[]
+            {
+                new Game {Name = "Tetris", DeveloperStudioId = 1},
+                new Game {Name = "World of Tanks", DeveloperStudioId = 1},
+                new Game {Name = "Dota2", DeveloperStudioId = 2},
+                new Game {Name = "Civilization", DeveloperStudioId = 3},
+                new Game {Name = "Doom", DeveloperStudioId = 3}
+            };
+
+            foreach (var g in games)
+            {
+                context.Games.Add(g);
             }
 
             context.SaveChanges();

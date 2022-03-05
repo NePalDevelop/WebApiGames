@@ -1,4 +1,6 @@
-﻿namespace WebApiGames.Domain.Models
+﻿using System.Collections.Generic;
+
+namespace WebApiGames.Models
 {
     public class Genre
     {
