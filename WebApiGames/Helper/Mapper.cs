@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using WebApiGames.Models;
 
-namespace WebApiGames.Models
+namespace WebApiGames.Helper
 {
     public static class Mapper
     {

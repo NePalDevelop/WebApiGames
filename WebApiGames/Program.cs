@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WebApiGames.Data;
 using WebApiGames;
 
-namespace TestASPDoctorPatient
+namespace WebApiGames
 {
     public class Program
     {

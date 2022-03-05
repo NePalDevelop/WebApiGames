@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using WebApiGames.Data.Models;
 
-namespace WebApiGames.Data.Models
+namespace WebApiGames.Data.Helper
 {
     public static class Mapper
     {
@@ -8,7 +9,7 @@ namespace WebApiGames.Data.Models
         {
             if (game == null) return null;
 
-            Domain.Models.Game domainGame = new Domain.Models.Game
+            var domainGame = new Domain.Models.Game
             {
                 Id = game.Id,
                 Name = game.Name,

@@ -8,6 +8,6 @@ namespace WebApiGames.Data.Models
 
         public string Name { get; set; }
 
-        public List<GamesGenreRelation> GamesRelaion { get; set; }
+        public List<GamesGenreRelation> GamesRelation { get; set; }
     }
 }
