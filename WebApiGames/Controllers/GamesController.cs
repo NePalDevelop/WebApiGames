@@ -20,6 +20,7 @@ namespace WebApiGames.Controllers
         }
 
         // GET: api/<GamesController>
+        // GET: api/<GamesController>?genre=<Genre>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Game>>> Get([FromQuery] Domain.Models.GameQuery gameQuery)
         {
